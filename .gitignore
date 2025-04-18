@@ -1,0 +1,7 @@
+# Ignore virtual environment folders
+venv/
+.venv/
+videoenv/
+
+# Ignore Python bytecode cache
+__pycache__/
