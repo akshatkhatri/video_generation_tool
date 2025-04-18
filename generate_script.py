@@ -1,10 +1,11 @@
 from news_scraping import fetch_latest_news
 from news_scraping import api_key
 import requests
+from news_scraping import fetch_latest_news
 
 # Fetch news
 news_articles = fetch_latest_news(api_key)
-article = news_articles[2]
+article = news_articles[0]
 
 def generate_script_for_article(headline, description):
     prompt = (
@@ -20,7 +21,7 @@ def generate_script_for_article(headline, description):
     headers = {"Content-Type": "application/json"}
 
     data = {
-        "model": "deepseek-chat",  # Change if your model has a different name
+        "model": "deepseek-chat", 
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.7
     }
