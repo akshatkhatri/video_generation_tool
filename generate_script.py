@@ -18,9 +18,9 @@ def generate_script_for_article(headline, description):
     f"- Begin with a strong hook, explain the story briefly, and end with a punchy closing line.\n"
     f"- DO NOT repeat the headline directly.\n"
     f"- The script must sound natural when read aloud and be suitable for video overlay.\n"
-    f"- The length should match a 20–25 second narration.\n"
+    f"- The length should match a 30–35 second narration.\n"
     f"- STRICTLY return ONLY the final script. Do NOT include any titles, summaries, comments, notes, or introductions like 'Here is your summary'.\n"
-    f"- The response must be JUST the paragraph, nothing else.\n"
+    f"- The response must be JUST the paragraph, nothing else.\n"   
 )
 
 

@@ -1,6 +1,9 @@
-from news_scraping import fetch_latest_news
 from news_scraping import api_key
-from generate_script import generate_script_for_article
+
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 import azure.cognitiveservices.speech as speechsdk
 
@@ -23,11 +26,11 @@ def text_to_speech(text, filename, key, region):
             print(f"Error details: {cancellation.error_details}")
 
 # Example usage
-speech_key_1 = "GDNrHswpuz5XeQ6lgWuljcBX1dRF8VhTgsk9N4joAlekSexZa9G9JQQJ99BDACqBBLyXJ3w3AAAYACOG9vTX"
-speech_key_2 = "1i9N63QXOI3o2CEZDhp4M7sJbUtYrqFtRFRSAq9tQ380mi1FdO1JJQQJ99BDACqBBLyXJ3w3AAAYACOGlOs2"
-service_region = "southeastasia"
-your_key = speech_key_1
-your_region = service_region
+speech_key_1 = os.getenv('AZURE_API_SPEECH_KEY_1')
+speech_key_2 = os.getenv('AZURE_API_SPEECH_KEY_2')
+service_region = os.getenv('AZURE_API_SERVICE_REGION')
+# your_key = speech_key_1
+# your_region = service_region
 
 # news_article = fetch_latest_news(api_key)
 # article = news_article[0]

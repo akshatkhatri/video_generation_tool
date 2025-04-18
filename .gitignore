@@ -5,3 +5,4 @@ videoenv/
 
 # Ignore Python bytecode cache
 __pycache__/
+.env

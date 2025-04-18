@@ -1,5 +1,10 @@
 import requests
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 def fetch_latest_news(api_key):
     url = "https://newsapi.org/v2/everything"
     params = {
@@ -22,14 +27,15 @@ def fetch_latest_news(api_key):
     return filtered_articles
 
 
-api_key = "af7e877631704fa9a2ba13d1469cd58c"
-news_articles = fetch_latest_news(api_key)
+api_key = os.getenv('NEWS_API_KEY')
+# # print(api_key)
+# news_articles = fetch_latest_news(api_key)
 # print(news_articles)
 
-if __name__ == "__main__":
-    for i, article in enumerate(news_articles, 1):
-        print(f"{i}. {article['title']}")
-        print(article['description'])
-        # print(article['content'])
-        print(article['url'])
-        print()
+# if __name__ == "__main__":
+#     for i, article in enumerate(news_articles, 1):
+#         print(f"{i}. {article['title']}")
+#         print(article['description'])
+#         # print(article['content'])
+#         print(article['url'])
+#         print()

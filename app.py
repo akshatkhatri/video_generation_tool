@@ -1,11 +1,21 @@
 from flask import Flask, render_template, redirect, url_for
-from news_scraping import fetch_latest_news, api_key
+from news_scraping import fetch_latest_news
 from generate_script import generate_script_for_article
 from generate_catchy_lines import generate_catchy_lines_for_an_article
-from convert_text_to_speech import text_to_speech, speech_key_1, service_region
+from convert_text_to_speech import text_to_speech
 from video_generation import generate_video
 from categorize_videos import categorize_videos
 from datetime import datetime
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+api_key = os.getenv('NEWS_API_KEY')
+speech_key_1 = os.getenv('AZURE_API_SPEECH_KEY_1')
+speech_key_2 = os.getenv('AZURE_API_SPEECH_KEY_2')
+service_region = os.getenv('AZURE_API_SERVICE_REGION')
+
 
 app = Flask(__name__)
 
