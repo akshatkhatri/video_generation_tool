@@ -8,7 +8,7 @@ def fetch_latest_news(api_key):
         # "domains": "indiatoday.in,ndtv.com,thehindu.com,timesofindia.indiatimes.com",
         "language": "en",
         "sortBy": "publishedAt",
-        "pageSize": 10,
+        "pageSize": 30,
     }
     response = requests.get(url, params=params)
     data = response.json()
@@ -26,10 +26,10 @@ api_key = "af7e877631704fa9a2ba13d1469cd58c"
 news_articles = fetch_latest_news(api_key)
 # print(news_articles)
 
-
-for i, article in enumerate(news_articles, 1):
-    print(f"{i}. {article['title']}")
-    print(article['description'])
-    # print(article['content'])
-    print(article['url'])
-    print()
+if __name__ == "__main__":
+    for i, article in enumerate(news_articles, 1):
+        print(f"{i}. {article['title']}")
+        print(article['description'])
+        # print(article['content'])
+        print(article['url'])
+        print()
