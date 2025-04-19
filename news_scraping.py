@@ -13,7 +13,7 @@ def fetch_latest_news(api_key):
         # "domains": "indiatoday.in,ndtv.com,thehindu.com,timesofindia.indiatimes.com",
         "language": "en",
         "sortBy": "publishedAt",
-        "pageSize": 30,
+        # "pageSize": 50,
     }
     response = requests.get(url, params=params)
     data = response.json()
