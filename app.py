@@ -25,21 +25,21 @@ def home():
 
 @app.route("/generate")
 def generate():
-    # Step 1: Fetch a news article
+    
     found_articles = fetch_latest_news(api_key)
     article = found_articles[0]
     headline = article['title']
     description = article['description']
 
-    # Step 2: Generate script and catchy lines
+    
     script = generate_script_for_article(headline, description)
     catchy_lines = generate_catchy_lines_for_an_article(headline, description)
 
-    # Step 3: Convert text to speech
+
     audio_path = "output_audio.mp3"
     text_to_speech(script, audio_path, speech_key_1, service_region)
 
-    # Step 4: Generate video with text overlays and voiceover
+    
     video_path = "static/videos/final_video_with_generated_text_overlay.mp4"
     video_category = categorize_videos(headline,description)
     generate_video(video_path, audio_path, catchy_lines, headline, description,video_category)
