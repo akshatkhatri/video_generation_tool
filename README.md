@@ -2,7 +2,8 @@
 
 Turn **real-time news** into **short, shareable news videos** — fully automated with AI.
 
-![screenshot](https://user-images.githubusercontent.com/your-screenshot-placeholder.png)
+![screenshot](assets/start_page.png)
+![screenshot](assets/video_page.png)
 
 ## 🚀 About the Project
 
@@ -12,7 +13,7 @@ This project takes a current news headline and:
 3. Converts the script to audio using Azure TTS.
 4. Generates a short video with dynamic overlays.
 
-All of this happens in a single click — and runs locally on your system.
+All of this happens in a single click — and runs on an Microsoft Azure Virtual Machine server or your own Local Machine.
 
 ---
 
@@ -22,7 +23,7 @@ All of this happens in a single click — and runs locally on your system.
 - 🧠 LLM-generated script and catchy one-liners
 - 🎤 Azure-based text-to-speech synthesis
 - 🎬 Dynamic video generation with MoviePy
-- 🌐 Simple Flask web interface
+- 🌐 Python Flask web interface
 
 ---
 
@@ -54,7 +55,8 @@ video_generation_tool/
 ├── static/
 │   └── videos/
 ├── .env                          # Stores API keys (not pushed)
-└── requirements.txt
+|── assets/                       # Handles images stored in Readme.md file
+└── requirements.txt              # List of all dependencies of the project
 ```
 
 ---
